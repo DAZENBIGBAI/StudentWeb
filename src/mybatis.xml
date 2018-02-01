@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<package name="com.situ.student.entity"/>
+	</typeAliases>
+	<environments default="development">
+        <environment id="development">
+           <!--使用JDBC的事物管理  -->
+           <transactionManager type="JDBC"/>
+           <!-- 配置数据库连接池  POOLED JDBC的数据库连接池-->
+           <dataSource type="POOLED">
+               <property name="driver" value="com.mysql.jdbc.Driver"/>
+               <property name="url" value="jdbc:mysql://localhost:3306/java1207?characterEncoding=UTF-8"/>
+               <property name="username" value="root"/>
+               <property name="password" value="root"/>
+           </dataSource>
+       	</environment>
+     </environments>
+      <!-- 加载映射文件 -->
+      <mappers>
+      	<mapper resource="com/situ/student/entity/BanjiMapper.xml"/>
+      	
+      </mappers>
+     
+     
+</configuration>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contactList>
+	<contact id="01">
+		<name>张十三</name>
+		<age>34</age>
+		<gender>女</gender>
+	</contact>
+	<contact id="02">
+		<name>大神</name>
+		<age>24</age>
+		<gender>男</gender>
+	</contact>
+</contactList>

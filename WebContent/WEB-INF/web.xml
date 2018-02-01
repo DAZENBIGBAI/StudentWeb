@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>StudentWeb</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>initServlet</servlet-name>
+    <servlet-class>web.initServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>findAllBanji</servlet-name>
+    <servlet-class>web.findAllBanjiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findAllBanji</servlet-name>
+    <url-pattern>/findAllBanji</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>findBC</servlet-name>
+    <servlet-class>web.findAllCourseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findBC</servlet-name>
+    <url-pattern>/findBC</url-pattern>
+  </servlet-mapping>
+<!--学生开始-->  
+  <servlet>
+    <servlet-name>studentMainServlet</servlet-name>
+    <servlet-class>com.situ.student.controller.studentMainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>studentMainServlet</servlet-name>
+    <url-pattern>/student</url-pattern>
+  </servlet-mapping>
+<!--学生结束-->
+<!--班级开始-->
+	<servlet>
+    <servlet-name>banjiMainServlet</servlet-name>
+    <servlet-class>com.situ.student.controller.banjiMainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>banjiMainServlet</servlet-name>
+    <url-pattern>/banji</url-pattern>
+   </servlet-mapping>
+<!--班级结束  -->  
+<!--教务开始-->
+  <servlet>
+	  <servlet-name>manager</servlet-name>
+	  <servlet-class>com.situ.student.controller.ManagerMainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>manager</servlet-name>
+  	<url-pattern>/manager</url-pattern>
+  </servlet-mapping>
+<!--教务结束-->
+<!--登陆开始-->
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.situ.student.controller.loginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+ <!--登陆结束-->
+ <!--验证码开始  -->
+ <servlet>
+ 	<servlet-name>checkImage</servlet-name>
+ 	<servlet-class>com.situ.student.controller.CheckImgServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>checkImage</servlet-name>
+ 	<url-pattern>/checkImage</url-pattern>
+ </servlet-mapping>	
+ <!--验证码结束  -->
+ <!--用户开始  -->
+ 	<servlet>
+ 		<servlet-name>user</servlet-name>
+ 		<servlet-class>com.situ.student.controller.UserServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>user</servlet-name>
+ 		<url-pattern>/user</url-pattern>
+ 	</servlet-mapping>
+ <!--用户结束  -->
+ <filter>
+    <filter-name>login</filter-name>
+    <filter-class>Filter.LoginFilter</filter-class>
+ </filter>
+ <filter-mapping>
+    <filter-name>login</filter-name>
+    <url-pattern>/*</url-pattern>
+ </filter-mapping>
+ <!--监听器开始  -->
+ 	<listener>
+ 		<listener-class>Listener.ContextListener</listener-class>
+ 	</listener>
+ <!--监听器结束  -->
+</web-app>
